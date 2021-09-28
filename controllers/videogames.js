@@ -6,7 +6,9 @@ const { Videogame } = require("../models"); // import stuff
 // find all games
 router.get("/", async (req, res) => {
   try {
-    let allGames = await Videogame.find({});
+    let allGames = await Videogame.find({})
+      .sort({ total_rating_count: -1 })
+      .limit(500);
 
     res.status(200).json({
       games: allGames,
@@ -34,19 +36,16 @@ router.get("/index/:idx", async (req, res) => {
   }
 });
 
-// find top n games
-router.get("/trending/:n", async (req, res) => {
-  let n = req.params.n;
-
+// finds top 20 games
+router.get("/trending/", async (req, res) => {
   let trending = await Videogame.find({})
     .sort({ total_rating_count: -1 })
-    .limit(n);
+    .limit(20);
   // const res = await Customer.find({}).sort({ name: 1 }).limit(1);
 
   try {
     res.status(200).json({
       game: trending,
-      why: n,
     });
   } catch (error) {
     console.log(error);

@@ -1,6 +1,5 @@
 const dotenv = require("dotenv");
 dotenv.config();
-// should this be require like this?
 const mongoose = require("mongoose");
 
 let connectionString;
@@ -28,10 +27,10 @@ db.on("error", (error) => {
 
 // Import models here
 const Videogame = require("./videogame");
-const Trending = require("./trending");
+const User = require("./user");
 
 module.exports = {
   // model goes here
   Videogame,
-  Trending,
+  User,
 };

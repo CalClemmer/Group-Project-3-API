@@ -16,12 +16,28 @@ To Do List:
 | steamReview      | Number             |                           |
 | userReviews      | [userReviewSchema] |                           |
 
-- [ ] Create a `trendingSchema`
+- Example of returned API data for a videogame
 
-| Attribute | Type            | Validations & Constraints    |
-| --------- | --------------- | ---------------------------- |
-| rank      | Number          | required: true, unique: true |
-| game      | videogameSchema | required: true               |
+---
+
+{  
+"id": 1030,
+
+"cover": {  
+"id": 172745,  
+"url": "images.igdb.com/igdb/image/upload/t_cover_big/co3pah.jpg"  
+},  
+"genres": [
+{
+"id": 31,
+"name": "Adventure"
+}
+],  
+"name": "The Legend of Zelda: Majora's Mask",  
+"rating": 87.4819300810487,  
+"summary": "After the events of The Legend of Zelda: Ocarina of Time (1998), Link is assaulted by an imp named Skull Kid under the control of the evil Majora's Mask and gets stuck in a troubled land called Termina. Link must repeat the same 3 days, take on the identities of deceased people from other races, collect numerous masks and rid the land of evil to stop Majora from destroying the world in this third-person action/adventure game.",  
+"total_rating_count": 524  
+},
 
 - [ ] Create a `favoritesSchema`
 
