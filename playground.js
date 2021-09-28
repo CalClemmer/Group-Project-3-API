@@ -1,7 +1,7 @@
 require("dotenv").config();
 const { Videogame } = require("./models");
 
-var json = "./models/api_data/videogameData.json";
+var json = require("./models/api_data/videogameData.json");
 
 // Videogame.insertMany(json, function (err, result) {
 //   if (err) {
