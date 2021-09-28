@@ -4,19 +4,19 @@ To Do List:
 
 - [ ] Create a `videogameSchema`
 
-| Attribute        | Type               | Validations & Constraints    |
-| ---------------- | ------------------ | ---------------------------- |
-| name             | String             | required: true, unique: true |
-| image            | String             |                              |
-| desc             | String             |                              |
-| ignReview        | Number             |                              |
-| metacriticReview | Number             |                              |
-| polygonReview    | Number             |                              |
-| googleReview     | Number             |                              |
-| steamReview      | Number             |                              |
-| userReviews      | [userReviewSchema] |                              |
+| Attribute        | Type               | Validations & Constraints |
+| ---------------- | ------------------ | ------------------------- |
+| name             | String             | required: true            |
+| image            | String             |                           |
+| desc             | String             |                           |
+| ignReview        | Number             |                           |
+| metacriticReview | Number             |                           |
+| polygonReview    | Number             |                           |
+| googleReview     | Number             |                           |
+| steamReview      | Number             |                           |
+| userReviews      | [userReviewSchema] |                           |
 
-- [ ] Create a `trendingNowSchema`
+- [ ] Create a `trendingSchema`
 
 | Attribute | Type            | Validations & Constraints    |
 | --------- | --------------- | ---------------------------- |
