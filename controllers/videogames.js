@@ -8,6 +8,7 @@ router.get("/", async (req, res) => {
   try {
     let allGames = await Videogame.find({})
       .sort({ total_rating_count: -1 })
+      //it's a bit silly just how huge the entire file is
       .limit(500);
 
     res.status(200).json({
@@ -55,17 +56,23 @@ router.get("/trending/", async (req, res) => {
   }
 });
 
-// Dinosaur index for reference
-// router.get('/:idx', function(req, res) {
-//   // get dinosaurs
-//   let creatures = fs.readFileSync('./models/prehistoric_creatures.json');
-//   let creatureData = JSON.parse(creatures);
+// returns all game names and genres
+router.get("/names/", async (req, res) => {
+  let allNames = await Videogame.find({}, "name genres")
+    .sort({ name: -1 })
+    .exec();
+  // const res = await Customer.find({}).sort({ name: 1 }).limit(1);
 
-//   //get array index from url parameter
-//   let creaturesIndex = parseInt(req.params.idx);
-
-//   //render page with data of the specified animal
-//   res.render('prehistoric_creatures/show', {myCreature: creatureData[creaturesIndex]});
-// });
+  try {
+    res.status(200).json({
+      game: allNames,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      message: "There was an error. Please try again.",
+    });
+  }
+});
 
 module.exports = router;

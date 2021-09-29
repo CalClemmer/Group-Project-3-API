@@ -20,6 +20,7 @@ const videogameSchema = new Schema({
   summary: { type: String },
   total_rating_count: { type: Number },
   videos: { type: Array },
+  steamID: { type: Number },
   ignReview: { type: Number },
   metacriticReview: { type: Number },
   polygonReview: { type: Number },
