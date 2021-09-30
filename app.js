@@ -15,6 +15,7 @@ app.use(passport.initialize());
 // routes & controllers
 const videogames = require("./controllers/videogames");
 const user = require("./controllers/users");
+const review = require("./controllers/reviews");
 
 app.get("/", (req, res) => {
   res.json({
@@ -26,6 +27,7 @@ app.get("/", (req, res) => {
 // app.use("/customers", customers);
 app.use("/videogames", videogames);
 app.use("/users", user);
+app.use("/review", review);
 
 // Another way to do the exact same thing
 // app.use("/customers", require("./controllers/customers"));

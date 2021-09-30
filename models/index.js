@@ -28,9 +28,11 @@ db.on("error", (error) => {
 // Import models here
 const Videogame = require("./videogame");
 const User = require("./user");
+const Review = require("./review");
 
 module.exports = {
   // model goes here
   Videogame,
   User,
+  Review,
 };
