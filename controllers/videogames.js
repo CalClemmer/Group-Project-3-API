@@ -6,10 +6,9 @@ const { Videogame } = require("../models"); // import stuff
 // find all games
 router.get("/", async (req, res) => {
   try {
-    let allGames = await Videogame.find({})
-      .sort({ total_rating_count: -1 })
-      //it's a bit silly just how huge the entire file is
-      .limit(500);
+    let allGames = await Videogame.find({}).sort({ total_rating_count: -1 });
+    //it's a bit silly just how huge the entire file is
+    //.limit(500); usually we want a limit cuz uh... too big a file lol
 
     res.status(200).json({
       games: allGames,

@@ -21,11 +21,13 @@ const videogameSchema = new Schema({
   total_rating_count: { type: Number },
   videos: { type: Array },
   steamID: { type: Number },
-  ignReview: { type: Number },
-  metacriticReview: { type: Number },
-  polygonReview: { type: Number },
-  googleReview: { type: Number },
+  ignReview: { type: String },
+  metacriticReview: { type: String },
+  polygonReview: { type: String },
+  googleReview: { type: String },
   steamReview: { type: Number },
+  eurogamerReview: { type: String },
+  gamespotReview: { type: String },
   userReviews: [userReviewSchema],
 });
 
