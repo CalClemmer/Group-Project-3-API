@@ -57,8 +57,8 @@ router.get("/trending/", async (req, res) => {
 
 // returns all game names and genres
 router.get("/names/", async (req, res) => {
-  let allNames = await Videogame.find({}, "name genres")
-    .sort({ name: -1 })
+  let allNames = await Videogame.find({}, "name genres cover")
+    .sort({ name: 1 })
     .exec();
   // const res = await Customer.find({}).sort({ name: 1 }).limit(1);
 
