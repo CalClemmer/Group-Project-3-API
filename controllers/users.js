@@ -15,7 +15,7 @@ router.get("/test", (req, res) => {
 router.post("/signup", async (req, res) => {
   // POST - adding the new user to the database
   console.log("===> Inside of /signup");
-  console.log(req.body);
+  console.log(req.body.name, req.body.email);
 
   User.findOne({ email: req.body.email })
     .then((user) => {
@@ -56,7 +56,7 @@ router.post("/signup", async (req, res) => {
 router.post("/login", async (req, res) => {
   // POST - finding a user and returning the user
   console.log("===> Inside of /login");
-  console.log(req.body);
+  console.log(req.body.name);
 
   const foundUser = await User.findOne({ email: req.body.email });
 
