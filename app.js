@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
 // app.use("/customers", customers);
 app.use("/videogames", videogames);
 app.use("/users", user);
-app.use("/review", review);
+app.use("/reviews", review);
 
 // Another way to do the exact same thing
 // app.use("/customers", require("./controllers/customers"));

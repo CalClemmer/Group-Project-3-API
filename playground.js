@@ -7,7 +7,7 @@ const appIDsteamjson = require("./models/api_data/appIDsteam.json");
 const appIdArr = appIDsteamjson["applist"]["apps"];
 const ignDatajson = require("./models/api_data/ignData.json");
 
-// inserts videogame data into mongodb
+// inserts initial videogame data into mongodb
 // Videogame.insertMany(videoGameDatajson, function (err, result) {
 //   if (err) {
 //     // handle error
