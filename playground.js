@@ -147,24 +147,38 @@ async function updateMetacriticReview(gameName, reviewScore) {
 //return value of getGoogleReview can only be read in an async function
 
 async function oneGameAllScores(gameName) {
-  data = await googleReviewAPI(gameName);
+  gameNameNoAccent = gameName.replace("é", "e");
+  data = await googleReviewAPI(gameNameNoAccent);
   findAndUpdateReviewScores(data, gameName);
 }
 
 async function addAllReviews() {
-  for (let i = 1550; i < videogameDatajson.length; i++) {
+  for (let i = 0; i < videogameDatajson.length; i++) {
     let name = videogameDatajson[i]["name"];
     setTimeout(function () {
       console.log(i);
       oneGameAllScores(name);
-    }, 500 * (i - 1550));
+    }, 500 * i);
   }
 
   console.log("We done!!!!");
 }
 
-addAllReviews();
+// addAllReviews();
 
+async function addPokemonReviews() {
+  for (let i = 0; i < videogameDatajson.length; i++) {
+    let name = videogameDatajson[i]["name"];
+    if (name.includes("é")) {
+      setTimeout(function () {
+        console.log(i);
+        oneGameAllScores(name);
+      }, 10 * i);
+    }
+  }
+}
+
+// addPokemonReviews();
 // oneGameAllScores("Cities: Skylines");
 
 async function getStoreData(id) {
