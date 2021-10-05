@@ -12,6 +12,22 @@ router.get("/test", (req, res) => {
   res.json({ message: "User endpoint OK! ✅" });
 });
 
+// function for user to favorite a game
+async function addGameToUser(id) {
+  try {
+    let currentUser = await User.findById(id);
+
+    let userGame = await Videogame.find({
+       id: {id}
+    });
+    currentUser.games.push(userGame);
+    await currentUser.save();
+    console.log(currentUser.games);
+
+  } catch (error) {
+    console.log(error);
+  }
+}
 router.post("/signup", async (req, res) => {
   // POST - adding the new user to the database
   console.log("===> Inside of /signup");
