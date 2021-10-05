@@ -7,6 +7,14 @@ const userSchema = new Schema({
   password: { type: String, required: true },
   timesLoggedIn: { type: Number, default: 0 },
   date: { type: Date, default: new Date() },
+  reviews: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Review'
+  }],
+  likedGames: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Videogame'
+  }]
 });
 
 const User = mongoose.model("User", userSchema);
